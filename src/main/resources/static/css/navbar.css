@@ -1,0 +1,104 @@
+/* Header */
+.header {
+    height: 65px;
+    background-image: linear-gradient(0, hsla(0, 67%, 9%, 0.136), #ef6053);
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* Navbar */
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 20px;
+}
+
+/* Logo */
+.header__logo {
+    margin-left: 0;
+}
+
+.header__logo img {
+    width: 67px;
+    height: 66.6px;
+}
+
+/* Navbar List */
+.header__navbar-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.header__navbar-item,
+.header__navbar-item-link {
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 350;
+}
+
+/* Dropdown */
+.hotel-dropdown {
+    position: relative;
+}
+
+.hotel-dropdown .dropdown-btn {
+    width: 200px;             /* Đặt chiều rộng cố định */
+    overflow-x: hidden;       /* Ẩn phần nội dung thừa theo chiều ngang */
+    text-overflow: ellipsis;  /* Thêm dấu ba chấm '...' nếu nội dung bị ẩn */
+    white-space: nowrap;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 350;
+    background: linear-gradient(0, #e4c9c7, #eb7e74);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+}
+
+.hotel-dropdown .dropdown-btn::after {
+    content: " ▼";            /* Chèn dấu mũi tên vào cuối */
+    position: absolute;       /* Đặt vị trí tuyệt đối */
+    right: 10px;              /* Cách phải 10px */
+    top: 50%;                 /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Căn giữa chính xác theo chiều dọc */
+}
+
+.hotel-dropdown .dropdown-content {
+    display: none; /* Ẩn nội dung dropdown ban đầu */
+    position: absolute;
+    top:100%;
+    background-color: #ef6053;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.hotel-dropdown .dropdown-content a {
+    color: white;
+    padding: 12px 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hotel-dropdown .dropdown-content a:hover {
+    background-color: #ab3030;
+}
+
+.hotel-dropdown:hover .dropdown-content {
+    display: block; /* Hiển thị dropdown khi hover */
+}

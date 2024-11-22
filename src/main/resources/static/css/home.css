@@ -1,0 +1,17 @@
+#slider{
+    position:relative;
+    padding-top:50%;
+    background: url('../img/mountain.png') top center / cover no-repeat;
+    margin-bottom: 50px;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 47px;
+    color:#fff;
+    width: 100%;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+}

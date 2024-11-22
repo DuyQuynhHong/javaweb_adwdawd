@@ -1,0 +1,262 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.browse-link {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card__all-room{
+    margin-left:62px;
+    margin-top:50px;
+    margin-bottom: 10px;
+    width:100px;
+    border: 1px solid #f1de94;
+    background: #f1de94;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top :10px;
+}
+
+.card__all-room a{
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    color: #c83333; /* Giữ màu văn bản mặc định của button */
+    display: block; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng của button */
+    width: 100%; /* Làm cho liên kết chiếm hết chiều rộng của button */
+    height: 100%; /* Làm cho liên kết chiếm hết chiều cao của button */
+    text-align: center; /* Canh giữa nội dung */
+}
+
+.room-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.card {
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.room-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+
+.room-info h3 {
+    font-size: 2rem;
+    color: #1779cf;
+    margin: 10px 0;
+}
+
+.room-info p {
+    font-size: 1.5rem;
+    color: #9711da;
+    margin-bottom: 10px;
+}
+
+.room-info button {
+    background-color: #d63384;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.room-info button:hover {
+    background-color: #5c585a;
+}
+
+
+
+/* Service */
+
+.container_header-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.header_service {
+    position: relative;
+    height: 150px;
+    width: 92%;
+    background-size: cover;
+    background-image: url("../img/services4.png");
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.header_service-title {
+    color: #da74c9;
+    font-size: 4rem;
+    align-content: center;
+}
+
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: flex-start;
+}
+
+.custom_hr {
+    width: 92%; /* Điều chỉnh độ rộng, ví dụ: 50% chiều rộng của phần tử chứa */
+    height: 1.5px; /* Điều chỉnh độ dày của đường */
+    background-color: #333; /* Đặt màu sắc cho đường */
+    border: none; /* Loại bỏ đường viền mặc định */
+    margin: 20px auto; /* Canh giữa, điều chỉnh khoảng cách trên dưới */
+}
+
+.hotel-color {
+    color: rgb(233, 154, 194);
+    font-size: 3.5rem;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 8px;
+}
+
+.service_info h3 {
+    font-size: 3.5rem;
+    color: #1779cf;
+    margin: 10px 0;
+}
+
+.container-service {
+    display: flex;
+    flex-direction: column;
+    width:92%;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.grid__row-service{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* Room */
+
+.container_header-room{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.header_room {
+    position: relative;
+    height: 150px;
+    width: 92%;
+    background-size: cover;
+    background-image: url("../img/services4.png");
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.header_room-title {
+    color: #da74c9;
+    font-size: 4rem;
+    align-content: center;
+}
+
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: flex-start;
+}
+
+.room_info h3 {
+    font-size: 3.5rem;
+    color: #1779cf;
+    margin: 10px 0;
+}
+
+
+/* parallax */
+.parallax {
+    background-image: url("../img/parallax.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width:92%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 2px 2px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:60px;
+}
+
+.container-parallax {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.parallax_info h1 {
+    font-size: 4rem;
+    color: #1779cf;
+    margin: 10px 0;
+}
+
+.parallax_info h3 {
+    font-size: 3rem;
+    color: #1779cf;
+    margin: 10px 0;
+}

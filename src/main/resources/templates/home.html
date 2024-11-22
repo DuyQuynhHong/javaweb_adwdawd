@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/listroom.css}">
+    <script th:src="@{/js/navbar.js}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+<div class="app">
+    <div th:replace="header :: header"></div>
+
+    <div id="slider">
+        <div class="text-content">
+            <h2 class="text-heading">Java Hotel</h2>
+            <div class="text-description">Một đêm đê mê. Go go go. Chó biết viết</div>
+        </div>
+    </div>
+
+    <hr class="custom_hr">
+
+    <div class="container_header-room">
+        <header class="header_room">
+            <div class="overlay_room"></div>
+            <div class="container_room">
+                <h1 class="header_room-title ">Hotel Room</h1>
+            </div>
+        </header>
+    </div>
+
+    <div class="container_header-room">
+        <div class="room_info">
+            <h3>Rooms at <span class="hotel-color">Java - Hotel <i class="fas fa-clock"></i></span>
+                24-Hour Front Desk
+            </h3>
+        </div>
+    </div>
+
+    <hr class="custom_hr">
+
+    <button class="card__all-room">
+        <a class="browse-link" th:href="@{/public/all-rooms}">All room -></a>
+    </button>
+
+    <div class="container">
+        <div class="grid__row">
+            <div th:each="room : ${rooms}" class="card grid__col-2">
+                <div class="room-card">
+                    <img th:src="@{/img/room.png}" alt="Room" />
+                    <div class="room-info">
+                        <h3 th:text="${room.roomName}"></h3>
+                        <p th:text="${room.roomType}"></p>
+                        <p th:text="${'$'+ room.roomPrice + ' / night'}"></p>
+                        <button>Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="custom_hr">
+
+    <div class="container_header-service">
+        <header class="header_service">
+            <div class="overlay_service"></div>
+            <div class="container_service">
+                <h1 class="header_service-title ">Hotel Service</h1>
+            </div>
+        </header>
+    </div>
+
+    <div class="container_header-service">
+        <div class="service_info">
+            <h3>Services at <span class="hotel-color">Java - Hotel <i class="fas fa-clock"></i></span>
+                24-Hour Front Desk
+            </h3>
+        </div>
+    </div>
+
+    <hr class="custom_hr">
+
+    <div class="container-service">
+        <div class="grid__row-service">
+            <div th:each="service : ${services}" class="card grid__col-2">
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3 th:text="${service.serviceName}"></h3>
+                        <p th:text="${'$' + service.servicePrice}"></p>
+                        <button th:onclick="'window.location.href=\'/public/service/' + ${service.id} + '\';'">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="custom_hr">
+
+    <div class="parallax">
+        <div class="container-parallax">
+            <div class="parallax_info">
+                <h1>Experience the Best hospitality at <span class="hotel-color">Java Hotel</span></h1>
+                <h3>We offer the best services for all your needs.</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="footer">
+    <!-- Nội dung footer ở đây -->
+</div>
+</div>
+
+</body>
+
+</html>

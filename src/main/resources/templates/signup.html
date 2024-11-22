@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{/css/log-sign.css}">
+    <title>Ludiflex | SignUp</title>
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a th:href="@{/public/home}" class="link active">Home</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn" th:onclick="|window.location.href='@{/public/login}'|">Log In</button>
+            <button class="btn white-btn" th:onclick="|window.location.href='@{/public/signup}'|">Sign Up</button>
+        </div>
+    </nav>
+
+
+
+    <div class="form-box">
+        <form th:action="@{/public/signup}" th:object="${user}" method="post" class="register-container">
+            <div class="top">
+                <span>Have an account? <a th:href="@{/pubic/login}">Login</a></span>
+                <header>Sign Up</header>
+                <span th:if="${error}" th:text="${error}" style="color: red;"></span>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" th:field="*{fullName}" class="input-field" placeholder="Full Name" required>
+                    <i class="bx bx-user"></i>
+                    <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" style="color: red;">Error</span>
+                </div>
+                <div class="input-box">
+                    <input type="text" th:field="*{userName}" class="input-field" placeholder="User Name" required>
+                    <i class="bx bx-user"></i>
+                    <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" style="color: red;">Error</span>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="email" th:field="*{email}" class="input-field" placeholder="Email" required>
+                <i class="bx bx-envelope"></i>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;">Error</span>
+            </div>
+            <div class="input-box">
+                <input type="password" th:field="*{password}" class="input-field" placeholder="Password" required>
+                <i class="bx bx-lock-alt"></i>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;">Error</span>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register">
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

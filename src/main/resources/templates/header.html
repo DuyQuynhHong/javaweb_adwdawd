@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+  <script th:src="@{/js/navbar.js}" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="header" th:fragment="header">
+  <nav class="header__navbar">
+    <ul class="header__navbar-list">
+      <div class="header__logo">
+        <a class="navbar-brand" th:href="@{/public/home}">
+          <img th:src="@{/img/logo.png}" alt="Bootstrap">
+        </a>
+      </div>
+      <li class="header__navbar-item"><a href="" class="header__navbar-item-link" th:href="@{/public/home}">Trang chủ</a></li>
+      <div class="hotel-dropdown">
+        <button class="dropdown-btn">Khách sạn</button>
+        <div class="dropdown-content">
+          <a th:each="location : ${locations}"
+             th:href="@{/public/hotel/{locationCode}(locationCode=${location.locationCode})}"
+             th:text="${location.locationName}"></a>
+        </div>
+      </div>
+    </ul>
+    <ul class="header__navbar-list">
+      <li class="header__navbar-item"><a th:href="@{/public/login}" class="header__navbar-item-link">Log In</a></li>
+      <li class="header__navbar-item"><a th:href="@{/public/signup}" class="header__navbar-item-link">Sign Up</a></li>
+    </ul>
+  </nav>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/room.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <script th:src="@{/js/navbar.js}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div th:replace="header :: header"></div>
+
+<div class="container my-4">
+    <div class="room-card-container">
+        <div th:each="room : ${rooms}" class="card mb-3">
+            <div class="card-body d-flex align-items-center">
+                <img th:src="@{/img/room.png}" alt="Room Photo" class="card-img-top mr-3">
+                <div class="flex-grow-1 px-3">
+                    <h3 class="hotel-color" th:text="${room.roomName}"></h3>
+                    <h6 class="room-type" th:text="${room.roomType}"></h6>
+                    <h6 class="room-price" th:text="${'$'+ room.roomPrice + ' / night'}"></h6>
+                    <p class="room-infor" th:text="${room.roomDetail}"></p>
+                </div>
+                <a href="#" class="btn btn-hotel btn-sm">View/Book Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+
